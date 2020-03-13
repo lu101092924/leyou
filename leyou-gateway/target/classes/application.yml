@@ -13,3 +13,4 @@ zuul:
   routes:
     item-service: /item/** # 商品微服务的映射路径
     leyou-search: /search/** #路由到搜索微服务
+    user-service: /user/** #用户微服务

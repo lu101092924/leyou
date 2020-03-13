@@ -28,7 +28,7 @@ public class SMSListener {
     @RabbitListener(bindings = @QueueBinding(
             value = @Queue(value = "LEYOU.SMS.QUEUE",durable = "true"),
             exchange = @Exchange(value = "LEYOU.SMS.EXCHANGE",ignoreDeclarationExceptions = "true"),
-            key = {"verifycode_sms"}
+            key = {"verifycode.sms"}
     ))
     public void listenerSendSMS(Map<String,String> msg) throws ClientException {
 
