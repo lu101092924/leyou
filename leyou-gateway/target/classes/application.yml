@@ -14,3 +14,6 @@ zuul:
     item-service: /item/** # 商品微服务的映射路径
     leyou-search: /search/** #路由到搜索微服务
     user-service: /user/** #用户微服务
+    auth-service: /auth/** # 授权中心微服务
+  add-host-header: true  #携带本身的请求头信息
+  sensitive-headers:    #配置禁止使用的头信息，设值为null，否则set-cookie无效

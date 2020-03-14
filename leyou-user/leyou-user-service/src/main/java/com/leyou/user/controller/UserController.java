@@ -70,7 +70,7 @@ public class UserController {
      * @param password 密码
      * @return 查询到用户的JSON格式的字符串
      */
-    @ResponseBody
+
     @GetMapping("query")
     public ResponseEntity<User> queryUser(@RequestParam("username")String userName,@RequestParam("password")String password){
 
