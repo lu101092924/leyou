@@ -17,3 +17,16 @@ zuul:
     auth-service: /auth/** # 授权中心微服务
   add-host-header: true  #携带本身的请求头信息
   sensitive-headers:    #配置禁止使用的头信息，设值为null，否则set-cookie无效
+
+leyou:
+  jwt:
+    pubKeyPath: C:\\tmp\\rsa\\rsa.pub # 公钥地址
+    cookieName: LY_COOKIE
+  filter:
+    allowPaths:
+      - /api/auth
+      - /api/search
+      - /api/user/register
+      - /api/user/check
+      - /api/user/code
+      - /api/item
