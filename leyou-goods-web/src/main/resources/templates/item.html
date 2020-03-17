@@ -660,9 +660,11 @@
                 //判断有没有登录
                 ly.verifyUser().then(reg=>{
 				    //已登录
+					//发送请求添加数据到redis中
+                    ly.http.post("/cart", {skuId: this.sku.id, num: this.num}).then(res=>{
 
-
-
+                        window.location = "http://www.leyou.com/cart.html";
+                    })
 				}).catch(()=>{
 				    //未登录
                     //先查询购物车记录
