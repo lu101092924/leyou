@@ -1,9 +1,9 @@
 package com.leyou.order.interceptor;
 
-import com.leyou.auth.pojo.UserInfo;
+import com.leyou.auth.entity.UserInfo;
 import com.leyou.auth.utils.JwtUtils;
-import com.leyou.common.utils.CookieUtils;
 import com.leyou.config.JwtProperties;
+import com.leyou.utils.CookieUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -25,7 +25,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 查询token
-        String token = CookieUtils.getCookieValue(request, "LY_TOKEN");
+        String token = CookieUtils.getCookieValue(request, "LY_COOKIE");
         if (StringUtils.isBlank(token)) {
             // 未登录,返回401
             response.setStatus(HttpStatus.UNAUTHORIZED.value());
